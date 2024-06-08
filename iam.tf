@@ -26,6 +26,34 @@ module "cs-folders-iam-0-containeradmin" {
   }
 }
 
+module "cs-folders-iam-0-editor" {
+  source  = "terraform-google-modules/iam/google//modules/folders_iam"
+  version = "~> 7.7"
+
+  folders = [
+    module.cs-envs.ids["nonprod"],
+  ]
+  bindings = {
+    "roles/editor" = [
+      "group:gcp-developers@gcp-demos.just2good.co.uk",
+    ]
+  }
+}
+
+module "cs-folders-iam-0-resourcemanagerprojectCreator" {
+  source  = "terraform-google-modules/iam/google//modules/folders_iam"
+  version = "~> 7.7"
+
+  folders = [
+    module.cs-envs.ids["nonprod"],
+  ]
+  bindings = {
+    "roles/resourcemanager.projectCreator" = [
+      "group:gcp-developers@gcp-demos.just2good.co.uk",
+    ]
+  }
+}
+
 module "cs-folders-iam-1-computeinstanceAdminv1" {
   source  = "terraform-google-modules/iam/google//modules/folders_iam"
   version = "~> 7.7"
@@ -54,12 +82,40 @@ module "cs-folders-iam-1-containeradmin" {
   }
 }
 
+module "cs-folders-iam-1-editor" {
+  source  = "terraform-google-modules/iam/google//modules/folders_iam"
+  version = "~> 7.7"
+
+  folders = [
+    module.cs-envs.ids["dev"],
+  ]
+  bindings = {
+    "roles/editor" = [
+      "group:gcp-developers@gcp-demos.just2good.co.uk",
+    ]
+  }
+}
+
+module "cs-folders-iam-1-resourcemanagerprojectCreator" {
+  source  = "terraform-google-modules/iam/google//modules/folders_iam"
+  version = "~> 7.7"
+
+  folders = [
+    module.cs-envs.ids["dev"],
+  ]
+  bindings = {
+    "roles/resourcemanager.projectCreator" = [
+      "group:gcp-developers@gcp-demos.just2good.co.uk",
+    ]
+  }
+}
+
 module "cs-projects-iam-2-loggingviewer" {
   source  = "terraform-google-modules/iam/google//modules/projects_iam"
   version = "~> 7.7"
 
   projects = [
-    module.cs-logging-vb582-ef543.project_id,
+    module.cs-logging-demos-dzb1.project_id,
   ]
   bindings = {
     "roles/logging.viewer" = [
@@ -73,7 +129,7 @@ module "cs-projects-iam-2-loggingprivateLogViewer" {
   version = "~> 7.7"
 
   projects = [
-    module.cs-logging-vb582-ef543.project_id,
+    module.cs-logging-demos-dzb1.project_id,
   ]
   bindings = {
     "roles/logging.privateLogViewer" = [
@@ -87,7 +143,7 @@ module "cs-projects-iam-2-bigquerydataViewer" {
   version = "~> 7.7"
 
   projects = [
-    module.cs-logging-vb582-ef543.project_id,
+    module.cs-logging-demos-dzb1.project_id,
   ]
   bindings = {
     "roles/bigquery.dataViewer" = [
@@ -101,7 +157,7 @@ module "cs-projects-iam-2-pubsubviewer" {
   version = "~> 7.7"
 
   projects = [
-    module.cs-logging-vb582-ef543.project_id,
+    module.cs-logging-demos-dzb1.project_id,
   ]
   bindings = {
     "roles/pubsub.viewer" = [
@@ -115,7 +171,7 @@ module "cs-projects-iam-3-bigquerydataViewer" {
   version = "~> 7.7"
 
   projects = [
-    module.cs-logging-vb582-ef543.project_id,
+    module.cs-logging-demos-dzb1.project_id,
   ]
   bindings = {
     "roles/bigquery.dataViewer" = [
@@ -129,7 +185,7 @@ module "cs-projects-iam-3-pubsubviewer" {
   version = "~> 7.7"
 
   projects = [
-    module.cs-logging-vb582-ef543.project_id,
+    module.cs-logging-demos-dzb1.project_id,
   ]
   bindings = {
     "roles/pubsub.viewer" = [
@@ -143,11 +199,11 @@ module "cs-service-projects-iam-4-computeinstanceAdminv1" {
   version = "~> 7.7"
 
   projects = [
-    module.cs-svc-huey-prod-svc-uhko.project_id,
+    module.cs-svc-ai-nooding-svc-prd-dzb1.project_id,
   ]
   bindings = {
     "roles/compute.instanceAdmin.v1" = [
-      "group:${module.cs-gg-ret-bank-huey-prod-svc.id}",
+      "group:${module.cs-gg-ai-nooding-svc-prd.id}",
     ]
   }
 }
@@ -157,11 +213,11 @@ module "cs-service-projects-iam-5-computeinstanceAdminv1" {
   version = "~> 7.7"
 
   projects = [
-    module.cs-svc-huey-nonprod-svc-uhko.project_id,
+    module.cs-svc-scratch-svc-prd-dzb1.project_id,
   ]
   bindings = {
     "roles/compute.instanceAdmin.v1" = [
-      "group:${module.cs-gg-ret-bank-huey-nonprod-svc.id}",
+      "group:${module.cs-gg-scratch-svc-prd.id}",
     ]
   }
 }
@@ -171,11 +227,11 @@ module "cs-service-projects-iam-6-computeinstanceAdminv1" {
   version = "~> 7.7"
 
   projects = [
-    module.cs-svc-dewey-prod-svc-uhko.project_id,
+    module.cs-svc-ai-nooding-svc-npd-dzb1.project_id,
   ]
   bindings = {
     "roles/compute.instanceAdmin.v1" = [
-      "group:${module.cs-gg-ret-bank-dewey-prod-svc.id}",
+      "group:${module.cs-gg-ai-nooding-svc-npd.id}",
     ]
   }
 }
@@ -185,11 +241,11 @@ module "cs-service-projects-iam-7-computeinstanceAdminv1" {
   version = "~> 7.7"
 
   projects = [
-    module.cs-svc-dewey-nonprod-svc-uhko.project_id,
+    module.cs-svc-scratch-svc-npd-dzb1.project_id,
   ]
   bindings = {
     "roles/compute.instanceAdmin.v1" = [
-      "group:${module.cs-gg-ret-bank-dewey-nonprod-svc.id}",
+      "group:${module.cs-gg-scratch-svc-npd.id}",
     ]
   }
 }

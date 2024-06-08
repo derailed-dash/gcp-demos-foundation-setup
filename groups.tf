@@ -1,12 +1,12 @@
 # In order to create google groups, the calling identity should have at least the
 # Group Admin role in Google Admin. More info: https://support.google.com/a/answer/2405986
 
-module "cs-gg-ret-bank-huey-prod-svc" {
+module "cs-gg-ai-nooding-svc-prd" {
   source  = "terraform-google-modules/group/google"
   version = "~> 0.6"
 
-  id           = "ret-bank-huey-prod-svc@gcp-demos.just2good.co.uk"
-  display_name = "ret-bank-huey-prod-svc"
+  id           = "ai-nooding-svc-prd@gcp-demos.just2good.co.uk"
+  display_name = "ai-nooding-svc-prd"
   customer_id  = data.google_organization.org.directory_customer_id
   types = [
     "default",
@@ -14,12 +14,12 @@ module "cs-gg-ret-bank-huey-prod-svc" {
   ]
 }
 
-module "cs-gg-ret-bank-huey-nonprod-svc" {
+module "cs-gg-scratch-svc-prd" {
   source  = "terraform-google-modules/group/google"
   version = "~> 0.6"
 
-  id           = "ret-bank-huey-nonprod-svc@gcp-demos.just2good.co.uk"
-  display_name = "ret-bank-huey-nonprod-svc"
+  id           = "scratch-svc-prd@gcp-demos.just2good.co.uk"
+  display_name = "scratch-svc-prd"
   customer_id  = data.google_organization.org.directory_customer_id
   types = [
     "default",
@@ -27,12 +27,12 @@ module "cs-gg-ret-bank-huey-nonprod-svc" {
   ]
 }
 
-module "cs-gg-ret-bank-dewey-prod-svc" {
+module "cs-gg-ai-nooding-svc-npd" {
   source  = "terraform-google-modules/group/google"
   version = "~> 0.6"
 
-  id           = "ret-bank-dewey-prod-svc@gcp-demos.just2good.co.uk"
-  display_name = "ret-bank-dewey-prod-svc"
+  id           = "ai-nooding-svc-npd@gcp-demos.just2good.co.uk"
+  display_name = "ai-nooding-svc-npd"
   customer_id  = data.google_organization.org.directory_customer_id
   types = [
     "default",
@@ -40,12 +40,12 @@ module "cs-gg-ret-bank-dewey-prod-svc" {
   ]
 }
 
-module "cs-gg-ret-bank-dewey-nonprod-svc" {
+module "cs-gg-scratch-svc-npd" {
   source  = "terraform-google-modules/group/google"
   version = "~> 0.6"
 
-  id           = "ret-bank-dewey-nonprod-svc@gcp-demos.just2good.co.uk"
-  display_name = "ret-bank-dewey-nonprod-svc"
+  id           = "scratch-svc-npd@gcp-demos.just2good.co.uk"
+  display_name = "scratch-svc-npd"
   customer_id  = data.google_organization.org.directory_customer_id
   types = [
     "default",

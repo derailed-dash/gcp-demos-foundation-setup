@@ -12,9 +12,9 @@ terraform {
     }
   }
   provider_meta "google" {
-    module_name = "blueprints/terraform/fs-exported-cd8d5c3d151d87aa/v0.1.0"
+    module_name = "blueprints/terraform/fs-exported-164e9f63b517846c/v0.1.0"
   }
   provider_meta "google-beta" {
-    module_name = "blueprints/terraform/fs-exported-cd8d5c3d151d87aa/v0.1.0"
+    module_name = "blueprints/terraform/fs-exported-164e9f63b517846c/v0.1.0"
   }
 }

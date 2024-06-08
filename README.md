@@ -1,8 +1,8 @@
-# GCP-Demos Org Cloud Foundation Setup with Terraform
+# Google Cloud Foundation Blueprint
 
-This repo is based on Terraform that has been created and downloaded from the Google Cloud Console, by following the Cloud Foundation Setup "Click-Ops" steps.
+This directory contains Terraform configuration for a foundational environment on Google Cloud.
 
-The Terraform configuration includes a subset of resources configured via the [setup checklist](https://cloud.google.com/docs/enterprise/setup-checklist)
+It includes a subset of resources configured via the [setup checklist](https://cloud.google.com/docs/enterprise/setup-checklist)
 and is based on the [security foundations blueprint](https://cloud.google.com/architecture/security-foundations).
 
 ## Prerequisites

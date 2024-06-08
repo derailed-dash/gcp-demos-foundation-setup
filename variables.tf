@@ -13,5 +13,5 @@ variable "org_id" {
 variable "billing_project" {
   description = "The project id to use for billing"
   type        = string
-  default     = "cs-host-a07beb7f63e34cec9c623b"
+  default     = "cs-host-2b129f618ad749c4ae8a02"
 }

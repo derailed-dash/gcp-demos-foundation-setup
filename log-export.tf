@@ -19,7 +19,7 @@ module "cs-logging-destination" {
   source  = "terraform-google-modules/log-export/google//modules/logbucket"
   version = "~> 8.0"
 
-  project_id               = module.cs-logging-vb582-ef543.project_id
+  project_id               = module.cs-logging-demos-dzb1.project_id
   name                     = "gcp-demos.just2good.co-logging"
   location                 = "global"
   retention_days           = 30

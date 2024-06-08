@@ -1,20 +1,20 @@
 # VPC and Subnets
-module "cs-vpc-prod-shared" {
+module "cs-vpc-prd-shared" {
   source  = "terraform-google-modules/network/google"
   version = "~> 9.0"
 
-  project_id   = module.cs-vpc-host-prod-vb582-ef543.project_id
-  network_name = "vpc-prod-shared"
+  project_id   = module.cs-vpc-host-prd-dzb1.project_id
+  network_name = "vpc-prd-shared"
 
   subnets = [
     {
-      subnet_name           = "subnet-prod-eu-west2"
+      subnet_name           = "subnet-prd-eu-west2"
       subnet_ip             = "10.0.0.0/24"
       subnet_region         = "europe-west2"
       subnet_private_access = true
     },
     {
-      subnet_name           = "subnet-prod-eu-west3"
+      subnet_name           = "subnet-prd-eu-west3"
       subnet_ip             = "10.0.1.0/24"
       subnet_region         = "europe-west3"
       subnet_private_access = true
@@ -23,7 +23,7 @@ module "cs-vpc-prod-shared" {
 
   firewall_rules = [
     {
-      name      = "vpc-prod-shared-allow-icmp"
+      name      = "vpc-prd-shared-allow-icmp"
       direction = "INGRESS"
       priority  = 10000
       log_config = {
@@ -40,7 +40,7 @@ module "cs-vpc-prod-shared" {
       ]
     },
     {
-      name      = "vpc-prod-shared-allow-ssh"
+      name      = "vpc-prd-shared-allow-ssh"
       direction = "INGRESS"
       priority  = 10000
       log_config = {
@@ -57,7 +57,7 @@ module "cs-vpc-prod-shared" {
       ]
     },
     {
-      name      = "vpc-prod-shared-allow-rdp"
+      name      = "vpc-prd-shared-allow-rdp"
       direction = "INGRESS"
       priority  = 10000
       log_config = {
@@ -77,22 +77,22 @@ module "cs-vpc-prod-shared" {
 }
 
 # VPC and Subnets
-module "cs-vpc-nonprod-shared" {
+module "cs-vpc-npd-shared" {
   source  = "terraform-google-modules/network/google"
   version = "~> 9.0"
 
-  project_id   = module.cs-vpc-host-nonprod-vb582-ef543.project_id
-  network_name = "vpc-nonprod-shared"
+  project_id   = module.cs-vpc-host-npd-dzb1.project_id
+  network_name = "vpc-npd-shared"
 
   subnets = [
     {
-      subnet_name           = "subnet-nonprod-eu-west2"
+      subnet_name           = "subnet-npd-eu-west2"
       subnet_ip             = "10.1.0.0/24"
       subnet_region         = "europe-west2"
       subnet_private_access = true
     },
     {
-      subnet_name           = "subnet-nonprod-eu-west3"
+      subnet_name           = "subnet-npd-eu-west3"
       subnet_ip             = "10.1.1.0/24"
       subnet_region         = "europe-west3"
       subnet_private_access = true
@@ -101,7 +101,7 @@ module "cs-vpc-nonprod-shared" {
 
   firewall_rules = [
     {
-      name      = "vpc-nonprod-shared-allow-icmp"
+      name      = "vpc-npd-shared-allow-icmp"
       direction = "INGRESS"
       priority  = 10000
       log_config = {
@@ -118,7 +118,7 @@ module "cs-vpc-nonprod-shared" {
       ]
     },
     {
-      name      = "vpc-nonprod-shared-allow-ssh"
+      name      = "vpc-npd-shared-allow-ssh"
       direction = "INGRESS"
       priority  = 10000
       log_config = {
@@ -135,7 +135,7 @@ module "cs-vpc-nonprod-shared" {
       ]
     },
     {
-      name      = "vpc-nonprod-shared-allow-rdp"
+      name      = "vpc-npd-shared-allow-rdp"
       direction = "INGRESS"
       priority  = 10000
       log_config = {
