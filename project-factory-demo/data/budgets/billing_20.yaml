@@ -1,0 +1,17 @@
+display_name: 20 in current spend
+amount:
+  currency_code: GBP
+  units: 20
+filter:
+  period:
+    calendar: MONTH
+  resource_ancestors:
+  - folders/2224700549 # dev folder
+threshold_rules:
+- percent: 0.5
+- percent: 0.75
+update_rules:
+  default:
+    disable_default_iam_recipients: true
+    monitoring_notification_channels:
+    - billing-default
