@@ -24,8 +24,21 @@ module "project-factory" {
 
     # location where the yaml files are read from
     factories_config = {
+      budgets = {
+        billing_account   = var.billing_account_id
+        budgets_data_path = "data/budgets"
+        notification_channels = {
+          billing-default = {
+            project_id = var.billing_project
+            type       = "email"
+            labels = {
+              email_address = var.billing_admins
+            }
+          }
+        }
+      }
       hierarchy = {
-        folders_data_path = "data/hierarchy"
+        folders_data_path = "data/hierarchy" # enable folder hierarchy factory
         parent_ids = {
           default = "folders/${var.default_folder_id}"
         }
