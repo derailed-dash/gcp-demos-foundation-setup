@@ -2,7 +2,6 @@
 labels:
  app: app-1
  team: foo
-parent: tnt-bar
 services:
   - container.googleapis.com
   - storage.googleapis.com
