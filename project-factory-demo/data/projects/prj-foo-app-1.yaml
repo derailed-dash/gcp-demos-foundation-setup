@@ -1,0 +1,24 @@
+# project prj-foo-app-1
+labels:
+ app: app-1
+ team: foo
+parent: folders/12345678
+services:
+  - container.googleapis.com
+  - storage.googleapis.com
+service_accounts:
+  app-1-be:
+    iam_self_roles:
+    - roles/logging.logWriter
+    - roles/monitoring.metricWriter
+    iam_project_roles:
+      my-host-project:
+        - roles/compute.networkUser
+  app-1-fe:
+    display_name: "Test app 1 frontend."
+    iam_project_roles:
+      my-host-project:
+        - roles/compute.networkUser
+billing_budgets:
+  - billing-20
+# tftest-file id=prj-app-1 path=data/projects/prj-app-1.yaml

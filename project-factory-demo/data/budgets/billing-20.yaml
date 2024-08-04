@@ -1,3 +1,6 @@
+# We can reference this in a project yaml, e.g.
+# billing_budgets:
+# - billing-20
 display_name: 20 in current spend
 amount:
   currency_code: GBP
