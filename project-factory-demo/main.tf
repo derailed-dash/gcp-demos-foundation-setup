@@ -26,6 +26,9 @@ module "project-factory" {
     factories_config = {
       hierarchy = {
         folders_data_path = "data/hierarchy"
+        parent_ids = {
+          default = "folders/${var.default_folder_id}"
+        }
       }
       projects_data_path = "data/projects"
     }    

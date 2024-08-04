@@ -7,3 +7,8 @@ variable "org_id" {
   description = "The organization id for the associated resources"
   type        = string
 }
+
+variable "default_folder_id" {
+  description = "Parent folder to use, if none is specified"
+  type        = string
+}
