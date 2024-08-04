@@ -1,6 +1,6 @@
 module "project-factory" {
     # source = "github.com/derailed-dash/cff-fast-lz//modules/project-factory"
-    source = "github.com/derailed-dash/cff-fast-lz//modules/project-factory?depth=1&ref=derailed-dash//fix-prj-validation"
+    source = "git::https://github.com/derailed-dash/cff-fast-lz//modules/project-factory?depth=1&ref=derailed-dash/fix-prj-validation"
     # source = "github.com/derailed-dash/cff-fast-lz//modules/project-factory?ref=v13.0.0&depth=1"
     
     # use a default billing account if none is specified via yaml
