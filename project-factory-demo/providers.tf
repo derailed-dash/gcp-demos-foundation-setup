@@ -3,7 +3,7 @@ terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
-      version = "~> 4.17"   # Use latest matching minor version for 4.17
+      version = ">= 5.37.0" 
     }
   }
 }
