@@ -1,29 +1,25 @@
-# Setup a service account for our seed project / project factory
+# ONE-TIME setup of a service account for our seed project / project factory
 
 gcloud auth login
 
+# Provide our seed project
 export SEED_PROJECT=seed-project-28844
 gcloud config set project ${SEED_PROJECT}
-gcloud auth application-default set-quota-project ${SEED_PROJECT}
 gcloud auth application-default login
+gcloud auth application-default set-quota-project ${SEED_PROJECT}
 
-source ./env-setup.sh
-
-export SA_ACCOUNT=sa-tf-seed
-export SA_ACCOUNT_EMAIL=${SA_ACCOUNT}@${SEED_PROJECT}.iam.gserviceaccount.com
-export SA_CREDS=~/.config/gcloud/${SA_ACCOUNT}.json
-export GOOGLE_APPLICATION_CREDENTIALS=${SA_CREDS}
+source ./env-setup.sh # set env vars, including setting ADC for our SA
 
 # Create the SA
 gcloud iam service-accounts create ${SA_ACCOUNT} \
   --description="Seed Project Terraform Service Account" --display-name="TF SA Seed"
 
-# Get the key
+# Get the key - RE-RUN on any new device
 gcloud iam service-accounts keys create ${SA_CREDS} \
   --iam-account ${SA_ACCOUNT_EMAIL}
 
 # Or to explicitly activate the service account
-# gcloud auth activate-service-account --key-file ${TF_CREDS}
+# gcloud auth activate-service-account --key-file ${SA_CREDS}
 
 # Org-level bindings
 gcloud organizations add-iam-policy-binding ${ORG_ID} \

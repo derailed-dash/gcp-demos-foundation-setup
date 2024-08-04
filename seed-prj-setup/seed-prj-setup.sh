@@ -1,17 +1,17 @@
-# One-time creation of a seed project for storing our Terraform state
+# ONE-TIME creation of a seed project for storing our Terraform state
 
 source ./env-setup.sh
 
 SUFFIX=$RANDOM
-PROJECT_ID=seed-project-$SUFFIX
-echo Seed project: $PROJECT_ID
+export SEED_PROJECT=seed-project-$SUFFIX
+echo Seed project: $SEED_PROJECT
 
 # Create the seed project
-gcloud projects create $PROJECT_ID
-gcloud config set project ${PROJECT_ID}
+gcloud projects create $SEED_PROJECT
+gcloud config set project ${SEED_PROJECT}
 
 # Link billing account
-gcloud billing projects link $PROJECT_ID --billing-account $BILLING_ACCT_ID
+gcloud billing projects link $SEED_PROJECT --billing-account $BILLING_ACCT_ID
 
 # Enable APIs we'll need to deploy with Terraform
 gcloud services enable cloudresourcemanager.googleapis.com
@@ -55,6 +55,6 @@ gcloud organizations add-iam-policy-binding $ORG_ID \
   --member="group:$ORG_ADMINS" \
   --role="roles/compute.xpnAdmin"
 
-gcloud projects add-iam-policy-binding $PROJECT_ID \
+gcloud projects add-iam-policy-binding $SEED_PROJECT \
   --member="group:$ORG_ADMINS" \
   --role="roles/serviceusage.serviceUsageConsumer"

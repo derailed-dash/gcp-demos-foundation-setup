@@ -10,8 +10,15 @@ Here you will find a sample landing zone Terraform configuration, as would be cr
 
 A set of scripts that can be used to setup the environment:
 
-- env-setup.sh 
+- `env-setup.sh` 
   - You should define your own values here. 
   - Run this whenever re-initialising your environment.
-- seed-prj-setup.sh
+  - Sets ADC to use SA.
+- `seed-prj-setup.sh`
   - Creates a Seed project, which can be used for running the LZ Terraform.
+  - Links to the billing account and enables APIs.
+- `sa-setup.sh`
+  - Creates a service account for our Seed project.
+  - Binds the requires roles.
+  - Obtains the SA key.
+  - Sets ADC to use the service account.
