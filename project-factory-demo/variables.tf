@@ -1,4 +1,4 @@
-variable "billing_account" {
+variable "billing_account_id" {
   description = "The ID of the billing account to associate projects with"
   type        = string
 }
@@ -6,9 +6,4 @@ variable "billing_account" {
 variable "org_id" {
   description = "The organization id for the associated resources"
   type        = string
-}
-
-variable "bucket" {
-  description = "The bucket used for state"
-  type        = string 
 }

@@ -1,6 +1,6 @@
 module "project-factory" {
-    # source              = "github.com/derailed-dash/cff-fast-lz//modules/project-factory?ref=v13.0.0&depth=1"
-    source              = "github.com/derailed-dash/cff-fast-lz//modules/project-factory"
+    # source = "github.com/derailed-dash/cff-fast-lz//modules/project-factory?ref=v13.0.0&depth=1"
+    source = "github.com/derailed-dash/cff-fast-lz//modules/project-factory"
     
     # use a default billing account if none is specified via yaml
     data_defaults = {
