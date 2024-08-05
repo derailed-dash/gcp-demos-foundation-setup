@@ -20,9 +20,10 @@ gcloud services enable serviceusage.googleapis.com
 gcloud services enable cloudbilling.googleapis.com
 gcloud services enable cloudidentity.googleapis.com
 gcloud services enable orgpolicy.googleapis.com
+gcloud services enable compute.googleapis.com
+gcloud services enable billingbudgets.googleapis.com
 
 # And if we subsequently want to deploy infra resources...
-gcloud services enable compute.googleapis.com
 gcloud services enable storage-api.googleapis.com
 gcloud services enable monitoring.googleapis.com
 gcloud services enable logging.googleapis.com
@@ -42,7 +43,6 @@ gcloud services enable admin.googleapis.com
 gcloud services enable appengine.googleapis.com
 gcloud services enable pubsub.googleapis.com
 gcloud services enable securitycenter.googleapis.com
-gcloud services enable billingbudgets.googleapis.com
 gcloud services enable iap.googleapis.com
 gcloud services enable oslogin.googleapis.com
 

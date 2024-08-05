@@ -1,23 +1,31 @@
-# project prj-foo-app-1
+# project prj-foo-app-dazbo
 labels:
-  app: app-1
+  app: app-dazbo
   team: foo
 services:
+  - compute.googleapis.com
+  - cloudbilling.googleapis.com
+  - serviceusage.googleapis.com
+  - servicemanagement.googleapis.com
   - container.googleapis.com
+  - iamcredentials.googleapis.com
   - storage.googleapis.com
   - run.googleapis.com
   - storage.googleapis.com
+  - logging.googleapis.com
+  - monitoring.googleapis.com
+  - billingbudgets.googleapis.com
 service_accounts:
-  app-1-be:
-    display_name: "Foo app 1 backend."
+  app-dazbo-be:
+    display_name: "Foo app dazbo backend."
     iam_self_roles:
     - roles/logging.logWriter
     - roles/monitoring.metricWriter
     iam_project_roles:
       vpc-host-npd-dzb1:
         - roles/compute.networkUser
-  app-1-fe:
-    display_name: "Foo app 1 frontend."
+  app-dazbo-fe:
+    display_name: "Foo app dazbo frontend."
     iam_project_roles:
       vpc-host-npd-dzb1:
         - roles/compute.networkUser

@@ -1,0 +1,20 @@
+# project prj-foo-iac-0000
+services:
+  - compute.googleapis.com
+  - cloudbilling.googleapis.com
+  - billingbudgets.googleapis.com
+  - serviceusage.googleapis.com
+  - servicemanagement.googleapis.com
+  - stackdriver.googleapis.com
+  - container.googleapis.com
+  - storage.googleapis.com
+  - cloudresourcemanager.googleapis.com
+  - iam.googleapis.com
+  - iamcredentials.googleapis.com
+  - monitoring.googleapis.com
+  - logging.googleapis.com
+  - cloudbuild.googleapis.com
+  - run.googleapis.com
+  - cloudkms.googleapis.com
+automation:
+  project: prj-foo-iac-0000
