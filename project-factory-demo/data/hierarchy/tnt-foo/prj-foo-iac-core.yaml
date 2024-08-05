@@ -11,6 +11,7 @@ services:
   - cloudbuild.googleapis.com
   - run.googleapis.com
   - cloudkms.googleapis.com
+  - serviceusage.googleapis.com
 automation:
   project: prj-foo-iac-core
   service_accounts:

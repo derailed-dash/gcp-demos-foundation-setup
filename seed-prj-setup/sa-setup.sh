@@ -52,11 +52,19 @@ gcloud organizations add-iam-policy-binding ${ORG_ID} \
 
 gcloud organizations add-iam-policy-binding ${ORG_ID} \
   --member="serviceAccount:${SA_ACCOUNT_EMAIL}" \
+  --role="roles/monitoring.editor"
+
+gcloud organizations add-iam-policy-binding ${ORG_ID} \
+  --member="serviceAccount:${SA_ACCOUNT_EMAIL}" \
   --role roles/iam.securityAdmin
 
 gcloud organizations add-iam-policy-binding ${ORG_ID} \
   --member="serviceAccount:${SA_ACCOUNT_EMAIL}" \
   --role roles/iam.serviceAccountAdmin
+
+gcloud organizations add-iam-policy-binding ${ORG_ID} \
+  --member="serviceAccount:${SA_ACCOUNT_EMAIL}" \
+  --role roles/iam.serviceAccountCreator
 
 gcloud organizations add-iam-policy-binding ${ORG_ID} \
   --member="serviceAccount:${SA_ACCOUNT_EMAIL}" \
