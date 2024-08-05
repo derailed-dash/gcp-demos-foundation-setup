@@ -1,0 +1,33 @@
+# project prj-foo-iac-core
+services:
+  - compute.googleapis.com
+  - stackdriver.googleapis.com
+  - container.googleapis.com
+  - storage.googleapis.com
+  - cloudresourcemanager.googleapis.com
+  - iam.googleapis.com
+  - monitoring.googleapis.com
+  - logging.googleapis.com
+  - cloudbuild.googleapis.com
+  - run.googleapis.com
+  - cloudkms.googleapis.com
+automation:
+  project: prj-foo-iac-core
+  service_accounts:
+    # sa name: foo-iac-core-rw
+    rw-sa:
+      description: Read/write automation sa for app example 0.
+    # sa name: foo-iac-core-ro
+    ro-sa:
+      description: Read-only automation sa for app example 0.
+  buckets:
+    # bucket name: foo-iac-core-state
+    state:
+      description: Terraform state bucket for app example 0.
+      iam:
+        roles/storage.objectCreator:
+          - rw-sa
+        roles/storage.objectViewer:
+          - rw-sa
+          - ro-sa
+          - group:devops@gcp-demos.just2good.co.uk

@@ -1,7 +1,7 @@
 # project prj-foo-app-1
 labels:
- app: app-1
- team: foo
+  app: app-1
+  team: foo
 services:
   - container.googleapis.com
   - storage.googleapis.com
