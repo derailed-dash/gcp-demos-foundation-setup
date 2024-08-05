@@ -5,6 +5,8 @@ labels:
 services:
   - container.googleapis.com
   - storage.googleapis.com
+  - run.googleapis.com
+  - storage.googleapis.com
 service_accounts:
   app-1-be:
     display_name: "Foo app 1 backend."
@@ -12,12 +14,12 @@ service_accounts:
     - roles/logging.logWriter
     - roles/monitoring.metricWriter
     iam_project_roles:
-      my-host-project:
+      vpc-host-npd-dzb1:
         - roles/compute.networkUser
   app-1-fe:
     display_name: "Foo app 1 frontend."
     iam_project_roles:
-      my-host-project:
+      vpc-host-npd-dzb1:
         - roles/compute.networkUser
 billing_budgets:
   - billing-20

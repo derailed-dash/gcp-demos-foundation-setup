@@ -14,16 +14,14 @@ services:
 automation:
   project: prj-foo-iac-core
   service_accounts:
-    # sa name: foo-iac-core-rw
-    rw-sa:
-      description: Read/write automation sa for app example 0.
-    # sa name: foo-iac-core-ro
-    ro-sa:
-      description: Read-only automation sa for app example 0.
+    rw-sa: # sa name: foo-iac-core-rw-sa
+      description: Read/write automation sa for iac-core.  
+    ro-sa: # sa name: foo-iac-core-ro-sa
+      description: Read-only automation sa for iac-core.
   buckets:
     # bucket name: foo-iac-core-state
     state:
-      description: Terraform state bucket for app example 0.
+      description: Terraform state bucket for iac-core.
       iam:
         roles/storage.objectCreator:
           - rw-sa
